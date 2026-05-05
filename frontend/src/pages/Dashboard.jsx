@@ -7,7 +7,7 @@ import {
   Loader2, ChevronRight, Search
 } from 'lucide-react';
 
-const API = 'http://localhost:5000';
+const API = import.meta.env.DEV ? 'http://localhost:5000' : '';
 
 /* ==================== TOAST ==================== */
 const ToastContainer = ({ toasts, removeToast }) => (

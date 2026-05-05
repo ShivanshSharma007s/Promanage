@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { LogIn, UserPlus, Mail, Lock, User, Shield } from 'lucide-react';
 
-const API = 'http://localhost:5000';
+const API = import.meta.env.DEV ? 'http://localhost:5000' : '';
 
 const Login = () => {
   const [isLogin, setIsLogin] = useState(true);

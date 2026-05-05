@@ -1,0 +1,11 @@
+{
+  "name": "promanage",
+  "version": "1.0.0",
+  "description": "Full-stack Project Management App",
+  "scripts": {
+    "install:all": "cd backend && npm install && cd ../frontend && npm install",
+    "build": "cd frontend && npm run build",
+    "start": "cd backend && npx prisma db push && node server.js",
+    "dev": "cd backend && node server.js"
+  }
+}

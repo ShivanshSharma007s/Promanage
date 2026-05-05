@@ -6,6 +6,9 @@ export const AuthContext = createContext();
 
 export const useAuth = () => useContext(AuthContext);
 
+// Use relative URLs in production, localhost in development
+const API_BASE = import.meta.env.DEV ? 'http://localhost:5000' : '';
+
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -47,7 +50,7 @@ export const AuthProvider = ({ children }) => {
   };
 
   return (
-    <AuthContext.Provider value={{ user, login, logout, loading }}>
+    <AuthContext.Provider value={{ user, login, logout, loading, API_BASE }}>
       {!loading && children}
     </AuthContext.Provider>
   );
