@@ -2,6 +2,6 @@
 builder = "nixpacks"
 
 [build.nixpacks]
-install_cmd = "cd backend && npm install && cd ../frontend && npm install"
-build_cmd = "cd frontend && npm run build"
+install_cmd = "cd backend && npm install && cd ../frontend && npm install --include=dev"
+build_cmd = "cd frontend && npx vite build"
 start_cmd = "cd backend && npx prisma db push && node server.js"
